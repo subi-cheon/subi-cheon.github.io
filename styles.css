@@ -192,23 +192,95 @@ p { margin: 0; }
 .section-head h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
 .section-desc { color: var(--text-soft); margin-top: 8px; font-size: 1.02rem; }
 
-/* About */
-.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; }
-.about-bio p { color: var(--text-soft); font-size: 1.05rem; }
-.about-bio p + p { margin-top: 18px; }
-.meta-block + .meta-block { margin-top: 32px; }
-.meta-block h3 {
+/* ===== About page ===== */
+.about-page { padding-bottom: 32px; }
+.about-hero { padding: 72px 0 40px; }
+.about-hero h1 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; }
+.about-lead {
+  margin-top: 20px;
+  max-width: 560px;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  color: var(--text-soft);
+}
+
+/* Table of contents */
+.about-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.about-toc a {
+  font-size: 14px;
+  color: var(--text-soft);
+  padding: 4px 0;
+}
+.about-toc a:not(:last-child)::after { content: '·'; margin-left: 12px; color: var(--text-faint); }
+.about-toc a:hover { color: var(--text); }
+
+/* About sections */
+.about-section { padding: 40px 0; border-top: 1px solid var(--border); scroll-margin-top: 80px; }
+.about-section:first-of-type { border-top: none; }
+.about-section > h2 {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--text-faint);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
-.timeline li { display: flex; flex-direction: column; padding: 12px 0; border-top: 1px solid var(--border); }
-.timeline li:first-child { border-top: none; padding-top: 0; }
-.timeline .period { font-size: 13px; color: var(--text-faint); }
-.timeline .role { font-weight: 500; }
+.about-section > p { color: var(--text-soft); font-size: 1.06rem; max-width: 640px; }
+.about-section > p + p { margin-top: 16px; }
+
+.about-list { max-width: 640px; }
+.about-list li {
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.about-list li:first-child { border-top: none; padding-top: 0; }
+.about-list strong { color: var(--text); font-weight: 600; }
+
+/* Skills */
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 40px; }
+.skill-group h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* Career */
+.career-table li {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-areas: 'period role' 'period org';
+  column-gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+}
+.career-table li:first-child { border-top: none; padding-top: 0; }
+.career-period { grid-area: period; font-size: 14px; color: var(--text-faint); padding-top: 2px; }
+.career-role { grid-area: role; font-weight: 600; font-size: 1.05rem; }
+.career-org { grid-area: org; color: var(--text-soft); font-size: 0.95rem; margin-top: 2px; }
+
+/* Contact */
+.contact-list { max-width: 520px; }
+.contact-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+.contact-list li:first-child { border-top: none; padding-top: 0; }
+.contact-label { width: 90px; flex-shrink: 0; font-size: 14px; color: var(--text-faint); }
+.contact-list a { color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+.contact-list a:hover { color: var(--accent); border-color: var(--accent); }
 
 .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-list li, .tag-list.small span {
@@ -298,8 +370,11 @@ p { margin: 0; }
   .nav-list.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .nav-list a { padding: 14px 12px; font-size: 17px; border-radius: 12px; }
 
-  .about-grid { grid-template-columns: 1fr; gap: 36px; }
   .project-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; gap: 28px; }
+  .career-table li { grid-template-columns: 1fr; grid-template-areas: 'period' 'role' 'org'; gap: 2px; }
+  .career-period { margin-bottom: 4px; }
+  .about-hero { padding: 48px 0 32px; }
   .hero { padding: 56px 24px 48px; }
   .now-card { flex-direction: column; gap: 10px; }
   .writing-item a:hover { padding-left: 8px; padding-right: 8px; }
