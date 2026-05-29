@@ -184,7 +184,7 @@ p { margin: 0; }
 .now-value a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ===== Sections ===== */
-.section { padding: 56px 24px; border-top: 1px solid var(--border); }
+.section { padding: 56px 24px; }
 .section-head { margin-bottom: 36px; }
 .section-head h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
 .section-desc { color: var(--text-soft); margin-top: 8px; font-size: 1.02rem; }
@@ -385,7 +385,7 @@ p { margin: 0; }
   .project-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; gap: 28px; }
   .career-table li { grid-template-columns: 1fr; gap: 2px; }
-  .career-head { display: none; }
+  .career-table li.career-head { display: none; }
   .career-period { margin-bottom: 4px; }
   .career-field { margin-top: 4px; }
   .about-hero { padding: 48px 0 32px; }
