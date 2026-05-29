@@ -257,16 +257,26 @@ p { margin: 0; }
 /* Career */
 .career-table li {
   display: grid;
-  grid-template-columns: 160px 1fr;
-  grid-template-areas: 'period role' 'period org';
+  grid-template-columns: 150px minmax(160px, 1fr) 1.4fr;
   column-gap: 24px;
-  padding: 18px 0;
+  padding: 16px 0;
   border-top: 1px solid var(--border);
 }
-.career-table li:first-child { border-top: none; padding-top: 0; }
-.career-period { grid-area: period; font-size: 14px; color: var(--text-faint); padding-top: 2px; }
-.career-role { grid-area: role; font-weight: 600; font-size: 1.05rem; }
-.career-org { grid-area: org; color: var(--text-soft); font-size: 0.95rem; margin-top: 2px; }
+.career-head {
+  border-top: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 12px;
+}
+.career-head span {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint) !important;
+}
+.career-period { font-size: 14px; color: var(--text-faint); padding-top: 2px; }
+.career-role { font-weight: 600; font-size: 1.02rem; }
+.career-field { color: var(--text-soft); font-size: 0.95rem; line-height: 1.55; }
 
 /* Contact */
 .contact-list { max-width: 520px; }
@@ -372,8 +382,10 @@ p { margin: 0; }
 
   .project-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; gap: 28px; }
-  .career-table li { grid-template-columns: 1fr; grid-template-areas: 'period' 'role' 'org'; gap: 2px; }
+  .career-table li { grid-template-columns: 1fr; gap: 2px; }
+  .career-head { display: none; }
   .career-period { margin-bottom: 4px; }
+  .career-field { margin-top: 4px; }
   .about-hero { padding: 48px 0 32px; }
   .hero { padding: 56px 24px 48px; }
   .now-card { flex-direction: column; gap: 10px; }
