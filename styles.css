@@ -14,7 +14,7 @@
   --text-faint: rgba(55, 56, 60, 0.61);
   --border: rgba(112, 115, 124, 0.12);
   --card-border: rgba(112, 115, 124, 0.18);
-  --accent: #rgba(55, 56, 60, 0.5);
+  --accent: rgba(55, 56, 60, 0.5);
   --accent-soft: rgba(0, 0, 0, 0.05);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
 
