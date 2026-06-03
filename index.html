@@ -33,6 +33,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="#writing">Writing</a></li>
           <li><a href="#project">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li>
             <a href="https://www.linkedin.com/in/subicheon/" target="_blank" rel="noopener noreferrer">
               Linkedin
@@ -171,6 +172,27 @@
           </div>
         </article>
       </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section container" id="contact">
+      <header class="section-head">
+        <h2>연락하기</h2>
+        <p class="section-desc">함께 만들고 싶은 일이 있다면 편하게 남겨주세요.</p>
+      </header>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="contactName">이름</label>
+          <input type="text" id="contactName" name="name" placeholder="홍길동" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="contactPhone">전화번호</label>
+          <input type="tel" id="contactPhone" name="phone" placeholder="010-1234-5678" autocomplete="tel" inputmode="tel" required />
+        </div>
+        <button type="submit" class="contact-submit" id="contactSubmit">문의</button>
+        <p class="contact-status" id="contactStatus" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 

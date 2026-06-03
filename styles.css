@@ -346,6 +346,69 @@ p { margin: 0; }
 .project-info h3 { font-size: 1.1rem; }
 .project-info p { color: var(--text-soft); font-size: 0.95rem; margin-top: 8px; }
 
+/* ===== Contact form ===== */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+  max-width: 560px;
+  align-items: end;
+}
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+}
+.contact-form input {
+  width: 100%;
+  padding: 13px 15px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  letter-spacing: -0.01em;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.contact-form input::placeholder { color: var(--text-faint); }
+.contact-form input:hover { border-color: var(--accent); }
+.contact-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.contact-submit {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 13px 32px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--bg);
+  background: var(--text);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.contact-submit:hover { opacity: 0.86; }
+.contact-submit:active { transform: translateY(1px); }
+.contact-submit:disabled { opacity: 0.5; cursor: default; }
+.contact-status {
+  grid-column: 1 / -1;
+  min-height: 20px;
+  font-size: 14px;
+  color: var(--text-faint);
+}
+.contact-status.success { color: #2e7d52; }
+.contact-status.error { color: #c0453f; }
+[data-theme='dark'] .contact-status.success { color: #6cd39b; }
+[data-theme='dark'] .contact-status.error { color: #e88a85; }
+
 /* ===== Article (single post) ===== */
 .article { max-width: 720px; padding-top: 40px; padding-bottom: 32px; }
 .back-link {
@@ -494,6 +557,7 @@ p { margin: 0; }
   .article-nav { flex-direction: column; }
   .article-nav-next { text-align: left; }
   .writing-item a:hover { padding-left: 8px; padding-right: 8px; }
+  .contact-form { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 721px) and (max-width: 980px) {
