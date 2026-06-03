@@ -1,0 +1,31 @@
+# 모든 검색엔진 허용
+User-agent: *
+Allow: /
+
+# AI 검색·생성엔진 명시적 허용 (GEO / AEO)
+# 글이 ChatGPT·Claude·Perplexity·Gemini 등의 답변에 인용되도록 허용합니다.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://subi-cheon.github.io/sitemap.xml
