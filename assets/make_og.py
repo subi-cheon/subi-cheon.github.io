@@ -75,22 +75,24 @@ def make(filename, eyebrow, title, sub):
     print("saved", filename)
 
 
-make("og-default.png", "Product Designer · Builder",
-     "디자인과 기술 사이에서 쓸모 있는 경험을 만듭니다.",
-     "Subi Cheon의 이력서, 포트폴리오, 그리고 생각을 기록하는 공간.")
+if __name__ == "__main__":
+    # 기존 페이지들의 OG 이미지 일괄 재생성
+    make("og-default.png", "Product Designer · Builder",
+         "디자인과 기술 사이에서 쓸모 있는 경험을 만듭니다.",
+         "Subi Cheon의 이력서, 포트폴리오, 그리고 생각을 기록하는 공간.")
 
-make("og-about.png", "About",
-     "천수비 — 만들면서 배우는 프로덕트 디자이너",
-     "경력, 일하는 방식, 그리고 지금 하고 있는 일.")
+    make("og-about.png", "About",
+         "천수비 — 만들면서 배우는 프로덕트 디자이너",
+         "경력, 일하는 방식, 그리고 지금 하고 있는 일.")
 
-make("og-good-product-questions.png", "Writing · 2026.05",
-     "좋은 제품은 어떤 질문에서 시작되는가",
-     "문제를 정의하는 방식이 결과물의 절반을 결정한다고 믿습니다.")
+    make("og-good-product-questions.png", "Writing · 2026.05",
+         "좋은 제품은 어떤 질문에서 시작되는가",
+         "문제를 정의하는 방식이 결과물의 절반을 결정한다고 믿습니다.")
 
-make("og-designer-who-codes.png", "Writing · 2026.03",
-     "디자이너가 코드를 다룬다는 것",
-     "직접 만들어 보면 설계의 해상도가 달라집니다.")
+    make("og-designer-who-codes.png", "Writing · 2026.03",
+         "디자이너가 코드를 다룬다는 것",
+         "직접 만들어 보면 설계의 해상도가 달라집니다.")
 
-make("og-interface-for-ai-agents.png", "Writing · 2026.01",
-     "AI 에이전트와 함께 일하는 인터페이스",
-     "사람과 에이전트의 역할을 어떻게 나눌 것인가.")
+    make("og-interface-for-ai-agents.png", "Writing · 2026.01",
+         "AI 에이전트와 함께 일하는 인터페이스",
+         "사람과 에이전트의 역할을 어떻게 나눌 것인가.")
