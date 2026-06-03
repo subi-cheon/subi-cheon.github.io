@@ -75,6 +75,8 @@
     var submitBtn = document.getElementById('contactSubmit');
     var nameEl = document.getElementById('contactName');
     var phoneEl = document.getElementById('contactPhone');
+    var messageEl = document.getElementById('contactMessage');
+    var consentEl = document.getElementById('contactConsent');
 
     function setStatus(msg, type) {
       statusEl.textContent = msg;
@@ -90,9 +92,12 @@
 
       var name = nameEl.value.trim();
       var phone = phoneEl.value.trim();
+      var message = messageEl ? messageEl.value.trim() : '';
 
       if (!name) { setStatus('이름을 입력해 주세요.', 'error'); nameEl.focus(); return; }
       if (!isValidPhone(phone)) { setStatus('전화번호를 정확히 입력해 주세요.', 'error'); phoneEl.focus(); return; }
+      if (!message) { setStatus('문의 내용을 입력해 주세요.', 'error'); messageEl.focus(); return; }
+      if (consentEl && !consentEl.checked) { setStatus('개인정보 수집·이용에 동의해 주세요.', 'error'); consentEl.focus(); return; }
 
       submitBtn.disabled = true;
       setStatus('전송 중…', '');
@@ -102,10 +107,10 @@
         sent = fetch(CONTACT.ENDPOINT_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: name, phone: phone })
+          body: JSON.stringify({ name: name, phone: phone, message: message })
         });
       } else if (CONTACT.SLACK_WEBHOOK_URL) {
-        var text = '📨 *새 문의가 도착했어요*\n• 이름: ' + name + '\n• 전화번호: ' + phone;
+        var text = '📨 *새 문의가 도착했어요*\n• 이름: ' + name + '\n• 전화번호: ' + phone + '\n• 내용: ' + message;
         // form-encoded payload + no-cors 로 Slack Webhook CORS 제약을 우회합니다.
         var body = 'payload=' + encodeURIComponent(JSON.stringify({ text: text }));
         sent = fetch(CONTACT.SLACK_WEBHOOK_URL, {

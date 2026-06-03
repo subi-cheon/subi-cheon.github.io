@@ -177,7 +177,7 @@
     <!-- ===== Contact ===== -->
     <section class="section container" id="contact">
       <header class="section-head">
-        <h2>연락하기</h2>
+        <h2>Contact</h2>
         <p class="section-desc">함께 만들고 싶은 일이 있다면 편하게 남겨주세요.</p>
       </header>
 
@@ -190,6 +190,17 @@
           <label for="contactPhone">전화번호</label>
           <input type="tel" id="contactPhone" name="phone" placeholder="010-1234-5678" autocomplete="tel" inputmode="tel" required />
         </div>
+        <div class="field field-full">
+          <label for="contactMessage">내용</label>
+          <textarea id="contactMessage" name="message" rows="5" placeholder="어떤 일로 연락 주셨는지 편하게 적어주세요." required></textarea>
+        </div>
+        <label class="contact-consent field-full" for="contactConsent">
+          <input type="checkbox" id="contactConsent" name="consent" required />
+          <span>
+            <strong>(필수)</strong> 문의 답변을 위해 이름·전화번호·문의 내용을 수집하며,
+            답변 완료 후 즉시 파기합니다. 동의를 거부할 수 있으나 이 경우 문의가 제한됩니다.
+          </span>
+        </label>
         <button type="submit" class="contact-submit" id="contactSubmit">문의</button>
         <p class="contact-status" id="contactStatus" role="status" aria-live="polite"></p>
       </form>
